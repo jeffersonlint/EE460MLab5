@@ -52,26 +52,49 @@ module controller(
         case(btns)    
             //PUSH        
             4'b0001: begin
-                cs <= 1;
                 we <= 1;
                 data_out <= swtchs;
                 address <= SPR;
                 SPR <= SPR-1;
-                DAR <= SPR+1;
-                DVR <= data_in;
+                DAR <= SPR;
             end
             //POP
             4'b0010: begin
-                cs <= 0;
                 we <= 0;
-                address<= DAR;
+                address <= DAR;
                 DVR <= data_in;
                 if(!empty) begin
                     SPR <= SPR+1;
                     DAR <= SPR+2;
                 end
             end
+            //ADD
+            4'b0010: begin
+                we <= 0;
+                DVR <= data_in;
+                address <= DAR;
+                DAR <= SPR + 1;
+                address <= SPR + 1;
+            end
+            //SUBTRACT
+            4'b0110: begin
+                we <= 0;
+                DVR <= data_in;
+                address <= DAR;
+                DAR <= SPR + 1;
+                address <= SPR + 1;
+            end
+            //TOP
+            4'b1000: begin
+                
+            end
+            //CLEAR/RST
+            4'b1010: begin
             
+            end            
+            //DEC ADDR
+            
+            //INC ADDR
             4'b1010: begin
                 SPR = 7'b1111111;
                 DAR = 7'b0000000;
