@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Apr  1 19:44:55 2021
+| Date         : Thu Apr  1 21:02:00 2021
 | Host         : DESKTOP-9UVINDL running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -53,21 +53,21 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 32 register/latch pins with no clock driven by root clock pin: btns[2] (HIGH)
+ There are 31 register/latch pins with no clock driven by root clock pin: btns[2] (HIGH)
 
- There are 32 register/latch pins with no clock driven by root clock pin: btns[3] (HIGH)
+ There are 31 register/latch pins with no clock driven by root clock pin: btns[3] (HIGH)
 
  There are 23 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 4 register/latch pins with no clock driven by root clock pin: ctrl/nolabel_line102/count_reg[15]/Q (HIGH)
+ There are 4 register/latch pins with no clock driven by root clock pin: ctrl/nolabel_line93/count_reg[15]/Q (HIGH)
 
- There are 32 register/latch pins with no clock driven by root clock pin: leftButton2/Q_reg/Q (HIGH)
+ There are 23 register/latch pins with no clock driven by root clock pin: leftButton2/Q_reg/Q (HIGH)
 
- There are 32 register/latch pins with no clock driven by root clock pin: leftSync/QN_reg/Q (HIGH)
+ There are 23 register/latch pins with no clock driven by root clock pin: leftSync/QN_reg/Q (HIGH)
 
- There are 32 register/latch pins with no clock driven by root clock pin: upButton2/Q_reg/Q (HIGH)
+ There are 31 register/latch pins with no clock driven by root clock pin: upButton2/Q_reg/Q (HIGH)
 
- There are 32 register/latch pins with no clock driven by root clock pin: upSync/QN_reg/Q (HIGH)
+ There are 31 register/latch pins with no clock driven by root clock pin: upSync/QN_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -82,7 +82,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 75 pins that are not constrained for maximum delay. (HIGH)
+ There are 74 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

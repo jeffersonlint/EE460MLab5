@@ -37,51 +37,45 @@ module controller(
     
     reg [6:0] SPR, DAR;
     reg [7:0] DVR;
-    reg empty;
+    wire empty;
     
     initial begin
         SPR = 7'b1111111;
         DAR = 7'b0000000;
         DVR = 8'b00000000;
-        empty = 1;
     end
     
-    assign leds = empty ? {1'b0, DAR} : 8'b10000000;
+    assign empty = (SPR == 7'b1111111) ? 1 : 0;
+    assign leds = {empty, DAR};
     
     always @(btns) begin
-        case(btns)            
+        case(btns)    
+            //PUSH        
             4'b0001: begin
-                cs = 1;
-                we = 1;
-                data_out = swtchs;
-                SPR = SPR-1;
-                DAR = SPR+1;
-                DVR = swtchs;
-                empty = 0;
+                cs <= 1;
+                we <= 1;
+                data_out <= swtchs;
+                address <= SPR;
+                SPR <= SPR-1;
+                DAR <= SPR+1;
+                DVR <= data_in;
             end
+            //POP
             4'b0010: begin
-                case(SPR)
-                    7'b1111111: begin
-                        cs = 0;
-                        we = 0;
-                        data_out = DVR;
-                        SPR = SPR + 1;
-                        DAR = SPR + 1;
-                        DVR = data_in;
-                    end
-                    default: begin
-                        cs = 0;
-                        we = 0;
-                        data_out = DVR;
-                    end
-                endcase
+                cs <= 0;
+                we <= 0;
+                address<= DAR;
+                DVR <= data_in;
+                if(!empty) begin
+                    SPR <= SPR+1;
+                    DAR <= SPR+2;
+                end
             end
             
             4'b1010: begin
                 SPR = 7'b1111111;
                 DAR = 7'b0000000;
                 DVR = 8'b00000000;
-                empty = 1;
             end
 
             default: begin

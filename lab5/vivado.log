@@ -20,3 +20,309 @@ INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
 open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:08 . Memory (MB): peak = 889.848 ; gain = 40.176
 update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: top
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1136.652 ; gain = 176.215
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DFF' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DFF' (1#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+WARNING: [Synth 8-567] referenced signal 'btns' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:58]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-567] referenced signal 'swtchs' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+WARNING: [Synth 8-567] referenced signal 'data_in' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+INFO: [Synth 8-6157] synthesizing module 'dec2seg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2seg' (2#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'displayFSM' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'displayFSM' (3#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (4#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-7023] instance 'ctrl' of module 'controller' has 12 connections declared, but only 11 given [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:72]
+INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (5#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1172.082 ; gain = 211.645
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1172.082 ; gain = 211.645
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1172.082 ; gain = 211.645
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Finished Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1281.070 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:19 . Memory (MB): peak = 1281.070 ; gain = 320.633
+16 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:28 . Memory (MB): peak = 1281.070 ; gain = 377.512
+place_ports {swtchs[0]} V17
+place_ports {swtchs[1]} V16
+place_ports {swtchs[2]} W16
+place_ports {swtchs[3]} W17
+place_ports {swtchs[4]} W15
+place_ports {swtchs[5]} V15
+place_ports {swtchs[6]} W14
+place_ports {swtchs[7]} W13
+save_constraints
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1355.438 ; gain = 51.074
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DFF' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DFF' (1#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+WARNING: [Synth 8-567] referenced signal 'btns' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:58]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-567] referenced signal 'swtchs' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+WARNING: [Synth 8-567] referenced signal 'data_in' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+INFO: [Synth 8-6157] synthesizing module 'dec2seg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2seg' (2#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'displayFSM' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'displayFSM' (3#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (4#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-7023] instance 'ctrl' of module 'controller' has 12 connections declared, but only 11 given [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:72]
+INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (5#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1395.852 ; gain = 91.488
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1395.852 ; gain = 91.488
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1395.852 ; gain = 91.488
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Finished Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:19 . Memory (MB): peak = 1415.012 ; gain = 110.648
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Thu Apr  1 20:00:21 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Thu Apr  1 20:01:25 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Thu Apr  1 20:03:54 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183AF2E54A
+open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2609.695 ; gain = 1100.191
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183AF2E54A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183AF2E54A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2644.000 ; gain = 33.203
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DFF' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DFF' (1#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+WARNING: [Synth 8-567] referenced signal 'btns' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:58]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-567] referenced signal 'swtchs' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+WARNING: [Synth 8-567] referenced signal 'data_in' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+INFO: [Synth 8-6157] synthesizing module 'dec2seg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2seg' (2#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'displayFSM' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'displayFSM' (3#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (4#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-7023] instance 'ctrl' of module 'controller' has 12 connections declared, but only 11 given [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:72]
+INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (5#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2675.648 ; gain = 64.852
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2699.480 ; gain = 88.684
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2699.480 ; gain = 88.684
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Finished Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 2727.941 ; gain = 117.145
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Thu Apr  1 20:15:53 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Thu Apr  1 20:17:04 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Thu Apr  1 20:18:57 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2733.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DFF' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DFF' (1#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
+WARNING: [Synth 8-567] referenced signal 'btns' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:58]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-6090] variable 'address' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:85]
+WARNING: [Synth 8-567] referenced signal 'swtchs' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+WARNING: [Synth 8-567] referenced signal 'data_in' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+WARNING: [Synth 8-567] referenced signal 'empty' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
+INFO: [Synth 8-6157] synthesizing module 'dec2seg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dec2seg' (2#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'displayFSM' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'displayFSM' (3#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (4#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
+WARNING: [Synth 8-7023] instance 'ctrl' of module 'controller' has 12 connections declared, but only 11 given [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:72]
+INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (5#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2733.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2733.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2733.023 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Finished Parsing XDC File [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2739.680 ; gain = 6.656
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Thu Apr  1 20:57:26 2021] Launched synth_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Thu Apr  1 20:59:55 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Thu Apr  1 21:02:07 2021] Launched impl_1...
+Run output will be captured here: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.

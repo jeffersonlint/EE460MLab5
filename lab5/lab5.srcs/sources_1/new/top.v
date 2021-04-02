@@ -26,7 +26,8 @@ module top(
     input [7:0] swtchs,
     output [7:0] leds,
     output [6:0] segs,
-    output [3:0] an
+    output [3:0] an,
+    output dp
     );
     
     wire cs, we;
@@ -34,7 +35,7 @@ module top(
     wire [7:0] data_out_mem, data_out_ctrl, data_bus;
     
     //TODO: assign statements for databus
-    assign data_bus = we ? data_out_mem : data_out_ctrl;
+    assign data_bus = we ? data_out_ctrl : data_out_mem;
     
     //debouncing for switches
     wire QA0, QA1, QA2, QA3, QAN0, QAN1, QAN2, QAN3;
@@ -69,7 +70,7 @@ module top(
     
     //instantiation of controller and memory
     
-    controller ctrl(clk, cs, we, addr, data_bus, data_out_ctrl, buttons, swtchs, leds, segs, an);
+    controller ctrl(clk, cs, we, addr, data_bus, data_out_ctrl, buttons, swtchs, leds, segs, an, dp);
     
     memory mem(clk, cs, we, addr, data_bus, data_out_mem);
     

@@ -18,9 +18,8 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 1
-set_param synth.incrementalSynthesisCache C:/Users/USER/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-47904-DESKTOP-9UVINDL/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/.Xil/Vivado-35436-DESKTOP-9UVINDL/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
@@ -28,19 +27,19 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.cache/wt [current_project]
-set_property parent.project_path C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.cache/wt [current_project]
+set_property parent.project_path C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo c:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/DFF.v
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/controller.v
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/dec2seg.v
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/displayFSM.v
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/memory.v
-  C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/sources_1/new/top.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v
+  C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -50,8 +49,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/constrs_1/new/top.xdc
-set_property used_in_implementation false [get_files C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
+read_xdc C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc
+set_property used_in_implementation false [get_files C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/constrs_1/new/top.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
