@@ -2,78 +2,13 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Apr  1 19:55:56 2021
-# Process ID: 35436
-# Current directory: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24868 C:\Users\USER\Desktop\EE460M\Github\EE460MLab5\lab5\lab5.xpr
-# Log file: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/vivado.log
-# Journal file: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5\vivado.jou
+# Start of session at: Thu Apr  1 21:23:08 2021
+# Process ID: 11536
+# Current directory: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9164 C:\Users\Public\Test\EE460M\Labs\Lab5\lab5\lab5.xpr
+# Log file: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5/vivado.log
+# Journal file: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.xpr
+open_project C:/Users/Public/Test/EE460M/Labs/Lab5/lab5/lab5.xpr
 update_compile_order -fileset sources_1
-synth_design -rtl -name rtl_1
-place_ports {swtchs[0]} V17
-place_ports {swtchs[1]} V16
-place_ports {swtchs[2]} W16
-place_ports {swtchs[3]} W17
-place_ports {swtchs[4]} W15
-place_ports {swtchs[5]} V15
-place_ports {swtchs[6]} W14
-place_ports {swtchs[7]} W13
-save_constraints
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-open_hw
-connect_hw_server
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-current_hw_device [get_hw_devices xc7a35t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
-refresh_design
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -jobs 2
-wait_on_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
-set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
-set_property PROGRAM.FILE {C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
-program_hw_devices [get_hw_devices xc7a35t_0]
-refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
