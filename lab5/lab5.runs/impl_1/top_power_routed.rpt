@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Apr  5 11:55:35 2021
+| Date             : Mon Apr  5 12:05:39 2021
 | Host             : DESKTOP-9UVINDL running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 35.288 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 34.921 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 34.802                           |
+| Dynamic (W)              | 34.435                           |
 | Device Static (W)        | 0.486                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     2.473 |      461 |       --- |             --- |
-|   LUT as Logic |     2.298 |      246 |     20800 |            1.18 |
+| Slice Logic    |     2.402 |      453 |       --- |             --- |
+|   LUT as Logic |     2.231 |      236 |     20800 |            1.13 |
 |   CARRY4       |     0.096 |       24 |      8150 |            0.29 |
-|   Register     |     0.073 |      121 |     41600 |            0.29 |
+|   Register     |     0.069 |      119 |     41600 |            0.29 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       19 |       --- |             --- |
-| Signals        |     2.506 |      367 |       --- |             --- |
+| Signals        |     2.333 |      355 |       --- |             --- |
 | Block RAM      |     0.069 |      0.5 |        50 |            1.00 |
-| I/O            |    29.754 |       33 |       106 |           31.13 |
+| I/O            |    29.631 |       33 |       106 |           31.13 |
 | Static Power   |     0.486 |          |           |                 |
-| Total          |    35.288 |          |           |                 |
+| Total          |    34.921 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     5.436 |       5.095 |      0.341 |
-| Vccaux    |       1.800 |     1.142 |       1.088 |      0.053 |
-| Vcco33    |       3.300 |     8.408 |       8.407 |      0.001 |
+| Vccint    |       1.000 |     5.192 |       4.851 |      0.341 |
+| Vccaux    |       1.800 |     1.137 |       1.084 |      0.053 |
+| Vcco33    |       3.300 |     8.373 |       8.372 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -139,14 +139,14 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| top                 |    34.802 |
-|   ctrl              |     4.845 |
-|     d2              |     1.714 |
-|     d3              |     0.499 |
-|     d5              |     0.223 |
-|     d6              |     0.052 |
-|     nolabel_line220 |     0.275 |
-|   mem               |     0.099 |
+| top                 |    34.435 |
+|   ctrl              |     4.602 |
+|     d2              |     1.420 |
+|     d3              |     0.404 |
+|     d5              |     0.430 |
+|     d6              |     0.040 |
+|     nolabel_line220 |     0.280 |
+|   mem               |     0.106 |
 +---------------------+-----------+
 
 

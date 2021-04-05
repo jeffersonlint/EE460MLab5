@@ -170,7 +170,7 @@ module controller(
                 SPR = SPR + 1;
                 countAdd = countAdd + 1;
             end
-            4'b0110: begin
+            4'b0101: begin
                 we = 1;
                 cs = 1;
                 data_out = temp1+temp2;
@@ -198,7 +198,7 @@ module controller(
                 SPR = SPR + 1;
                 countSub = countSub + 1;
             end
-            4'b0110: begin
+            4'b0101: begin
                 we = 1;
                 cs = 1;
                 data_out = temp2-temp1;
