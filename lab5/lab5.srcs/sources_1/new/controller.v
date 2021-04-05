@@ -38,81 +38,185 @@ module controller(
     reg [6:0] SPR, DAR;
     reg [7:0] DVR;
     wire empty;
+    reg [7:0] temp1, temp2;
+    reg [3:0] countAdd, countSub;
+    
+    assign empty = (SPR == 7'b1111111) ? 1 : 0;
+    assign leds = {empty, DAR};
     
     initial begin
         SPR = 7'b1111111;
         DAR = 7'b0000000;
         DVR = 8'b00000000;
+        countAdd = 4'b0000;
+        countSub = 4'b0000;
     end
     
-    assign empty = (SPR == 7'b1111111) ? 1 : 0;
-    assign leds = {empty, DAR};
+    // button debouncing and syncing
     
-    always @(btns) begin
-        case(btns)    
-            //PUSH        
-            4'b0001: begin
-                we <= 1;
-                data_out <= swtchs;
-                address <= SPR;
-                SPR <= SPR-1;
-                DAR <= SPR;
+    reg [24:0] count;
+    initial count = 0;
+    reg slowClk;
+    initial slowClk = 0;
+    
+    always @(posedge clk) begin
+        case(count)
+            2500000: begin
+                count <= 0;
+                slowClk = ~slowClk;
             end
-            //POP
-            4'b0010: begin
-                we <= 0;
-                address <= DAR;
-                DVR <= data_in;
-                if(!empty) begin
-                    SPR <= SPR+1;
-                    DAR <= SPR+2;
+            default: count = count + 1;
+        endcase
+    end
+    
+    wire Q1, Q2, Q3, Q4, Q5, Q6, QN1, QN2, QN3, QN4, QN5, QN6; 
+    wire btn0Press, btn1Press;
+    
+    DFF d1(slowClk, btns[0], Q1, QN1);
+    DFF d2(slowClk, Q1, Q2, QN2);
+    DFF d3(clk, Q2, Q3, QN3);
+    DFF d4(slowClk, btns[1], Q4, QN4);
+    DFF d5(slowClk, Q4, Q5, QN5);
+    DFF d6(clk, Q5, Q6, QN6);
+    
+    assign btn0Press = (QN3 && Q2) ? 1 : 0;
+    assign btn1Press = (QN6 && Q5) ? 1 : 0;
+    
+    //WRITE THE FUNCTION OF THE CONTROLLER
+    
+    always @(posedge clk) begin
+        case(btns[3:2])
+            2'b00: begin
+                we = 0;
+                cs = 0;
+                address = DAR;
+                DVR = data_in;
+                if(btn0Press) begin //PUSH
+                    we = 1;
+                    cs = 1;
+                    data_out = swtchs;
+                    SPR = SPR - 1;
+                    DAR = SPR + 1;
+                    address = DAR;
+                    DVR = data_in;
                 end
-            end
-            //ADD
-            4'b0010: begin
-                we <= 0;
-                DVR <= data_in;
-                address <= DAR;
-                DAR <= SPR + 1;
-                address <= SPR + 1;
-            end
-            //SUBTRACT
-            4'b0110: begin
-                we <= 0;
-                DVR <= data_in;
-                address <= DAR;
-                DAR <= SPR + 1;
-                address <= SPR + 1;
-            end
-            //TOP
-            4'b1000: begin
+                else if(btn1Press) begin    //POP
+                    SPR = SPR + 1;
+                    DAR = SPR + 1;
+                    address = DAR;
+                    DVR = data_in;
+                end
                 
             end
-            //CLEAR/RST
-            4'b1010: begin
             
-            end            
-            //DEC ADDR
-            
-            //INC ADDR
-            4'b1010: begin
-                SPR = 7'b1111111;
-                DAR = 7'b0000000;
-                DVR = 8'b00000000;
+            2'b01: begin
+                we = 0;
+                cs = 0;
+                DAR = SPR + 1;
+                address = DAR;
+                if(btn0Press) begin //ADD
+                    countAdd = countAdd + 1;
+                end
+                else if(btn1Press) begin    //SUB
+                    countSub = countSub + 1;
+                end
             end
-
-            default: begin
-
+            
+            2'b10: begin
+                we = 0;
+                cs = 0;
+                if(btn0Press) begin //TOP
+                    DAR = SPR + 1;
+                    address = DAR;
+                    DVR = data_in;
+                end
+                else if(btn1Press) begin //CLEAR
+                    SPR = 7'b1111111;
+                    DAR = 7'b0000000;
+                    DVR = 8'b00000000;
+                end
+            end
+            
+            2'b11: begin
+                we = 0;
+                cs = 0;
+                address = DAR;
+                DVR = data_in;
+                if(btn0Press) begin //DAR INC
+                    if(DAR+1<7'b1111111) begin
+                        DAR=DAR+1;
+                    end
+                end
+                else if(btn1Press) begin //DAR DEC
+                    if(DAR-1>SPR) begin
+                        DAR=DAR-1;
+                    end
+                end
             end
         endcase
-        address = DAR;
+        case(countAdd)
+            4'b0000: begin 
+                countAdd = 4'b0000;
+            end
+            4'b0010: begin
+                temp1 = data_in;
+                SPR = SPR + 1;
+                DAR = DAR + 1;
+                address = DAR;
+                countAdd = countAdd + 1;
+            end
+            4'b0100: begin
+                temp2 = data_in;
+                SPR = SPR + 1;
+                countAdd = countAdd + 1;
+            end
+            4'b0110: begin
+                we = 1;
+                cs = 1;
+                data_out = temp1+temp2;
+                address = SPR;
+                SPR = SPR - 1;
+                countAdd = 0;
+            end
+            default: begin
+                countAdd = countAdd + 1;
+            end
+        endcase
+        case(countSub)
+            4'b0000: begin 
+                countSub = 4'b0000;
+            end
+            4'b0010: begin
+                temp1 = data_in;
+                SPR = SPR + 1;
+                DAR = DAR + 1;
+                address = DAR;
+                countSub = countSub + 1;
+            end
+            4'b0100: begin
+                temp2 = data_in;
+                SPR = SPR + 1;
+                countSub = countSub + 1;
+            end
+            4'b0110: begin
+                we = 1;
+                cs = 1;
+                data_out = temp2-temp1;
+                address = SPR;
+                SPR = SPR - 1;
+                countSub = 0;
+            end
+            default: begin
+                countSub = countSub + 1;
+            end
+        endcase
     end
+       
+    wire [6:0] w0, w1;
     
-    wire [6:0] d0, d1;
+    dec2seg digit1(DVR[7:4], w1);
+    dec2seg digit0(DVR[3:0], w0);
     
-    dec2seg digit1(DVR[7:4], d1);
-    dec2seg digit0(DVR[3:0], d0);
-    
-    displayFSM(clk, d0, d1, an, sseg, dp);
+    displayFSM(clk, w0, w1, an, sseg, dp);
     
 endmodule

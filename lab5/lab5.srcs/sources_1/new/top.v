@@ -35,46 +35,14 @@ module top(
     wire [7:0] data_out_mem, data_out_ctrl, data_bus;
     
     //TODO: assign statements for databus
-    assign data_bus = we ? data_out_ctrl : data_out_mem;
+    assign data_bus = we ? data_out_ctrl : 8'bzzzzzzzz;
     
-    //debouncing for switches
-    wire QA0, QA1, QA2, QA3, QAN0, QAN1, QAN2, QAN3;
-    wire Up, Left, Right, Down, UpNOT, LeftNOT, RightNOT, DownNOT;
-    
-    DFF upButton1(clk, btns[0], QA0, QAN0);
-    DFF upButton2(clk, QA0, Up, UpNOT);
-    DFF leftButton1(clk, btns[1], QA1, QAN1);
-    DFF leftButton2(clk, QA1, Left, LeftNOT);  
-    
-    wire UpPress, LeftPress, UN, LN;
-    wire USP, LSP;
-    
-    DFF upSync(clk, Up, UpPress, UN);
-    DFF leftSync(clk, Left, LeftPress, LN);
-    
-    reg [3:0] buttons;
-    assign USP = UN & Up;
-    assign LSP = LN & Left;
-    
-    always @(USP or LSP) begin
-        if(USP) begin
-            buttons = {btns[3:2], 2'b01};
-        end
-        else if(LSP) begin
-            buttons = {btns[3:2], 2'b10};
-        end
-        else begin
-            buttons = {btns[3:2], 2'b00};
-        end
-    end
-    
+    assign data_bus = we ? 8'bzzzzzzzz : data_out_mem;
+     
     //instantiation of controller and memory
     
-    controller ctrl(clk, cs, we, addr, data_bus, data_out_ctrl, buttons, swtchs, leds, segs, an, dp);
+    controller ctrl(clk, cs, we, addr, data_bus, data_out_ctrl, btns, swtchs, leds, segs, an, dp);
     
     memory mem(clk, cs, we, addr, data_bus, data_out_mem);
-    
-    
-    
     
 endmodule

@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Apr  1 21:23:08 2021
+# Process ID: 11536
+# Current directory: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9164 C:\Users\Public\Test\EE460M\Labs\Lab5\lab5\lab5.xpr
+# Log file: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5/vivado.log
+# Journal file: C:/Users/Public/Test/EE460M/Labs/Lab5/lab5\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Public/Test/EE460M/Labs/Lab5/lab5/lab5.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.cache/ip'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Public/Test/EE460M/Lab5/lab5/lab5.ip_user_files', nor could it be found using path 'C:/Users/USER/Desktop/EE460M/Lab5/lab5/lab5.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 1000.730 ; gain = 139.363
+update_compile_order -fileset sources_1
