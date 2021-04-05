@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Apr  1 21:00:59 2021
+| Date         : Mon Apr  5 11:54:39 2021
 | Host         : DESKTOP-9UVINDL running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     6 |
-|    Minimum number of control sets                        |     6 |
+| Total control sets                                       |     7 |
+|    Minimum number of control sets                        |     7 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
 | Unused register locations in slices containing registers |    15 |
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     6 |
-| >= 0 to < 4        |     1 |
-| >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     0 |
+| Total control sets |     7 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     1 |
-| >= 16              |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     2 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,27 +58,28 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              57 |           23 |
+| No           | No                    | No                     |              74 |           32 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
+| No           | Yes                   | No                     |              24 |            6 |
+| Yes          | No                    | No                     |              15 |           10 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | Yes                   | No                     |               8 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------------------+---------------+------------------+------------------+----------------+
-|         Clock Signal         | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+------------------------------+---------------+------------------+------------------+----------------+
-|  upSync/QN_reg_1             |               |                  |                1 |              1 |
-|  ctrl/nolabel_line93/slowClk |               |                  |                2 |              4 |
-|  upSync/QN_reg_0[0]          |               |                  |                3 |              8 |
-|  upButton2/Q_reg_0           |               |                  |                3 |              8 |
-|  upSync/E[0]                 |               |                  |                5 |             14 |
-|  clk_IBUF_BUFG               |               |                  |                9 |             22 |
-+------------------------------+---------------+------------------+------------------+----------------+
++-------------------------------+---------------------+------------------+------------------+----------------+
+|          Clock Signal         |    Enable Signal    | Set/Reset Signal | Slice Load Count | Bel Load Count |
++-------------------------------+---------------------+------------------+------------------+----------------+
+|  ctrl/nolabel_line220/slowClk |                     |                  |                1 |              4 |
+|  ctrl/slowClk_reg_n_0         |                     |                  |                2 |              4 |
+|  clk_IBUF_BUFG                | ctrl/d3/QN_reg_2[0] |                  |                6 |              7 |
+|  clk_IBUF_BUFG                | ctrl/d3/QN_reg_1    | ctrl/d5/Q_reg_1  |                2 |              8 |
+|  clk_IBUF_BUFG                | ctrl/d3/E[0]        |                  |                4 |              8 |
+|  clk_IBUF_BUFG                |                     | ctrl/slowClk     |                6 |             24 |
+|  clk_IBUF_BUFG                |                     |                  |               29 |             66 |
++-------------------------------+---------------------+------------------+------------------+----------------+
 
 

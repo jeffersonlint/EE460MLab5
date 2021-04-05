@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Apr  1 20:57:32 2021
-# Process ID: 47028
+# Start of session at: Mon Apr  5 11:52:29 2021
+# Process ID: 43340
 # Current directory: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1/top.vds
@@ -16,30 +16,26 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 50852 
+INFO: Helper process launched with PID 52324 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 676.246 ; gain = 177.477
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 676.445 ; gain = 177.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
 INFO: [Synth 8-6157] synthesizing module 'DFF' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'DFF' (1#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/DFF.v:23]
-WARNING: [Synth 8-567] referenced signal 'btns' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:58]
-INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
-WARNING: [Synth 8-6090] variable 'address' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:85]
-WARNING: [Synth 8-567] referenced signal 'swtchs' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
-WARNING: [Synth 8-567] referenced signal 'data_in' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
-WARNING: [Synth 8-567] referenced signal 'empty' should be on the sensitivity list [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:51]
 INFO: [Synth 8-6157] synthesizing module 'dec2seg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'dec2seg' (2#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/dec2seg.v:23]
 INFO: [Synth 8-6157] synthesizing module 'displayFSM' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'displayFSM' (3#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/displayFSM.v:23]
+INFO: [Synth 8-4471] merging register 'cs_reg' into 'we_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:91]
+WARNING: [Synth 8-6014] Unused sequential element cs_reg was removed.  [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:91]
 INFO: [Synth 8-6155] done synthesizing module 'controller' (4#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:23]
-WARNING: [Synth 8-7023] instance 'ctrl' of module 'controller' has 12 connections declared, but only 11 given [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:72]
 INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'memory' (5#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/memory.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'top' (6#1) [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/top.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 740.313 ; gain = 241.543
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 740.699 ; gain = 242.219
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -52,10 +48,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 740.313 ; gain = 241.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 740.699 ; gain = 242.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 740.313 ; gain = 241.543
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 740.699 ; gain = 242.219
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -67,29 +63,31 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.047 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 856.008 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 853.047 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 856.008 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'displayFSM'
 INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:157]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:185]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -99,13 +97,8 @@ INFO: [Synth 8-5544] ROM "an" won't be mapped to Block RAM because address size 
                  iSTATE2 |                             1000 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'displayFSM'
-WARNING: [Synth 8-327] inferring latch for variable 'cs_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:55]
-WARNING: [Synth 8-327] inferring latch for variable 'DAR_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:49]
-WARNING: [Synth 8-327] inferring latch for variable 'SPR_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:48]
-WARNING: [Synth 8-327] inferring latch for variable 'data_out_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:57]
-WARNING: [Synth 8-327] inferring latch for variable 'DVR_reg' [C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.srcs/sources_1/new/controller.v:61]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -118,21 +111,36 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      7 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 8     
+	   3 Input      4 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
 +---Registers : 
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 12    
+	               25 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                7 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 14    
 +---RAMs : 
 	             1024 Bit         RAMs := 1     
 +---Muxes : 
+	   2 Input      8 Bit        Muxes := 8     
+	   5 Input      8 Bit        Muxes := 6     
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   4 Input      7 Bit        Muxes := 4     
-	   2 Input      7 Bit        Muxes := 2     
-	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 13    
+	   2 Input      7 Bit        Muxes := 26    
+	   5 Input      7 Bit        Muxes := 9     
+	   4 Input      4 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 5     
+	   5 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -144,7 +152,6 @@ Module top
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 2     
 Module DFF 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -157,13 +164,34 @@ Detailed RTL Component Info :
 Module controller 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      7 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 8     
+	   3 Input      4 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               25 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
 +---Muxes : 
+	   2 Input      8 Bit        Muxes := 7     
+	   5 Input      8 Bit        Muxes := 6     
 	   4 Input      8 Bit        Muxes := 1     
-	   4 Input      7 Bit        Muxes := 3     
-	   2 Input      7 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 26    
+	   4 Input      7 Bit        Muxes := 12    
+	   5 Input      7 Bit        Muxes := 9     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   5 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 4     
+	   5 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 5     
+	   4 Input      1 Bit        Muxes := 4     
 Module memory 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -187,7 +215,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -204,7 +232,7 @@ Note: The table above is a preliminary report that shows the Block RAMs at the c
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6837] The timing for the instance i_0/mem/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_35/mem/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -215,13 +243,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 853.047 ; gain = 354.277
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 856.008 ; gain = 357.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -248,7 +276,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6837] The timing for the instance mem/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 853.266 ; gain = 354.496
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 869.434 ; gain = 370.953
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -272,7 +300,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -285,7 +313,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -297,25 +325,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -332,58 +360,56 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |     4|
-|3     |LUT1     |     4|
-|4     |LUT2     |     2|
-|5     |LUT3     |    16|
-|6     |LUT4     |    18|
-|7     |LUT5     |    20|
-|8     |LUT6     |    20|
+|2     |CARRY4   |    24|
+|3     |LUT1     |     9|
+|4     |LUT2     |    69|
+|5     |LUT3     |    38|
+|6     |LUT4     |    49|
+|7     |LUT5     |    52|
+|8     |LUT6     |   100|
 |9     |RAMB18E1 |     1|
-|10    |FDRE     |    26|
-|11    |LD       |    31|
-|12    |IBUF     |    13|
-|13    |OBUF     |    19|
+|10    |FDRE     |   114|
+|11    |IBUF     |    13|
+|12    |OBUF     |    20|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+-------------------+-----------+------+
-|      |Instance           |Module     |Cells |
-+------+-------------------+-----------+------+
-|1     |top                |           |   175|
-|2     |  mem              |memory     |     1|
-|3     |  ctrl             |controller |   123|
-|4     |    nolabel_line93 |displayFSM |    44|
-|5     |  leftButton1      |DFF        |     1|
-|6     |  leftButton2      |DFF_0      |     3|
-|7     |  leftSync         |DFF_1      |     4|
-|8     |  upButton1        |DFF_2      |     1|
-|9     |  upButton2        |DFF_3      |     3|
-|10    |  upSync           |DFF_4      |     5|
-+------+-------------------+-----------+------+
++------+--------------------+-----------+------+
+|      |Instance            |Module     |Cells |
++------+--------------------+-----------+------+
+|1     |top                 |           |   490|
+|2     |  mem               |memory     |     1|
+|3     |  ctrl              |controller |   454|
+|4     |    d1              |DFF        |     1|
+|5     |    d2              |DFF_0      |   126|
+|6     |    d3              |DFF_1      |    45|
+|7     |    d4              |DFF_2      |     1|
+|8     |    d5              |DFF_3      |    22|
+|9     |    d6              |DFF_4      |     6|
+|10    |    nolabel_line220 |displayFSM |    44|
++------+--------------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 869.059 ; gain = 370.289
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:38 . Memory (MB): peak = 869.059 ; gain = 257.555
-Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 869.059 ; gain = 370.289
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 875.223 ; gain = 261.434
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 875.223 ; gain = 376.742
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 880.102 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 883.293 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 31 instances were transformed.
-  LD => LDCE: 31 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-29 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
+32 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 880.102 ; gain = 587.324
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 880.102 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 883.293 ; gain = 590.770
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 883.293 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Desktop/EE460M/Github/EE460MLab5/lab5/lab5.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr  1 20:58:30 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  5 11:53:20 2021...

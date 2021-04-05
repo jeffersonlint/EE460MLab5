@@ -143,7 +143,7 @@ module controller(
                 address = DAR;
                 DVR = data_in;
                 if(btn0Press) begin //DAR INC
-                    if(DAR+1<7'b1111111) begin
+                    if(DAR+1<=7'b1111111) begin
                         DAR=DAR+1;
                     end
                 end

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Apr  1 21:02:00 2021
+| Date             : Mon Apr  5 11:55:35 2021
 | Host             : DESKTOP-9UVINDL running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+--------------+
-| Total On-Chip Power (W)  | 8.136        |
-| Design Power Budget (W)  | Unspecified* |
-| Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 8.020        |
-| Device Static (W)        | 0.116        |
-| Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 44.3         |
-| Junction Temperature (C) | 65.7         |
-| Confidence Level         | Low          |
-| Setting File             | ---          |
-| Simulation Activity File | ---          |
-| Design Nets Matched      | NA           |
-+--------------------------+--------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 35.288 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 34.802                           |
+| Device Static (W)        | 0.486                            |
+| Effective TJA (C/W)      | 5.0                              |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.208 |      159 |       --- |             --- |
-|   LUT as Logic |     0.185 |       65 |     20800 |            0.31 |
-|   CARRY4       |     0.009 |        4 |      8150 |            0.05 |
-|   Register     |     0.009 |       57 |     41600 |            0.14 |
+| Slice Logic    |     2.473 |      461 |       --- |             --- |
+|   LUT as Logic |     2.298 |      246 |     20800 |            1.18 |
+|   CARRY4       |     0.096 |       24 |      8150 |            0.29 |
+|   Register     |     0.073 |      121 |     41600 |            0.29 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-| Signals        |     0.338 |      151 |       --- |             --- |
-| Block RAM      |     0.082 |      0.5 |        50 |            1.00 |
-| I/O            |     7.392 |       32 |       106 |           30.19 |
-| Static Power   |     0.116 |          |           |                 |
-| Total          |     8.136 |          |           |                 |
+|   Others       |     0.000 |       19 |       --- |             --- |
+| Signals        |     2.506 |      367 |       --- |             --- |
+| Block RAM      |     0.069 |      0.5 |        50 |            1.00 |
+| I/O            |    29.754 |       33 |       106 |           31.13 |
+| Static Power   |     0.486 |          |           |                 |
+| Total          |    35.288 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,16 +72,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.722 |       0.676 |      0.046 |
-| Vccaux    |       1.800 |     0.285 |       0.269 |      0.016 |
-| Vcco33    |       3.300 |     2.078 |       2.077 |      0.001 |
+| Vccint    |       1.000 |     5.436 |       5.095 |      0.341 |
+| Vccaux    |       1.800 |     1.142 |       1.088 |      0.053 |
+| Vcco33    |       3.300 |     8.408 |       8.407 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.005 |       0.004 |      0.001 |
+| Vccbram   |       1.000 |     0.015 |       0.005 |      0.010 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -136,19 +136,17 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------+-----------+
-| Name               | Power (W) |
-+--------------------+-----------+
-| top                |     8.020 |
-|   ctrl             |     0.362 |
-|     nolabel_line93 |     0.132 |
-|   leftButton1      |     0.002 |
-|   leftButton2      |     0.012 |
-|   leftSync         |     0.019 |
-|   mem              |     0.128 |
-|   upButton1        |     0.003 |
-|   upButton2        |     0.013 |
-|   upSync           |     0.029 |
-+--------------------+-----------+
++---------------------+-----------+
+| Name                | Power (W) |
++---------------------+-----------+
+| top                 |    34.802 |
+|   ctrl              |     4.845 |
+|     d2              |     1.714 |
+|     d3              |     0.499 |
+|     d5              |     0.223 |
+|     d6              |     0.052 |
+|     nolabel_line220 |     0.275 |
+|   mem               |     0.099 |
++---------------------+-----------+
 
 
